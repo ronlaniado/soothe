@@ -33,7 +33,7 @@ function showActiveTriggers() {
 
 			(arrayOfFilterTypes.activeFilterTypes).forEach(function(item) {
 				var button = document.getElementById(item);
-				button.className = "mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--red-A100";
+				button.className = "mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--red-700";
 			});
 		}
 	});
@@ -56,7 +56,7 @@ function toggleTrigger(){
 		// Add to local storage
 		if (perms.indexOf(trigger) > -1) {
 			perms.splice(perms.indexOf(trigger, 1));
-			document.getElementById(trigger).className = "mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--light-blue-A100";
+			document.getElementById(trigger).className = "mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--blue-grey-200";
 		}
 
 		else {
