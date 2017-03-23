@@ -19,23 +19,24 @@ function showActiveTriggers() {
 
 	chrome.storage.local.get(['activeFilterTypes'], function (arrayOfFilterTypes) {
 		
-		console.log(arrayOfFilterTypes);
-
 		// Check if any preferences exist
-		if (typeof arrayOfFilterTypes.profile === "undefined" && arrayOfFilterTypes.length == 0) {
-			console.log("new arr");
-			chrome.storage.local.set({'activeFilterTypes': []});
-		}
+		console.log(arrayOfFilterTypes.activeFilterTypes);
 
-		else {
+		try {
 			// Change colours
-			console.log("exist arr");
-
 			(arrayOfFilterTypes.activeFilterTypes).forEach(function(item) {
 				var button = document.getElementById(item);
 				button.className = "mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-color--red-700";
 			});
+
 		}
+
+		catch(err) {
+			console.log("new");
+			chrome.storage.local.set({'activeFilterTypes': []});
+
+		}
+
 	});
 }
 
@@ -46,8 +47,8 @@ function toggleTrigger(){
 
 	chrome.storage.local.get(['activeFilterTypes'], function (arrayOfFilterTypes) {
 
-		allPermissions = (arrayOfFilterTypes.activeFilterTypes).slice(0);
-
+		console.log(arrayOfFilterTypes);
+		allPermissions = (arrayOfFilterTypes.activeFilterTypes);
 		updateChromePermissions(allPermissions);
 	});
 
