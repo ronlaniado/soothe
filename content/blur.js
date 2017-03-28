@@ -24,32 +24,6 @@ function addBlur(elem) {
 			targetDiv.style.webkitFilter =  "blur(3px)";
 			targetDiv.addEventListener("click", removeBlur, false);
 
-			// var clearDiv = document.createElement("div");
-			// var padding = 2 * parseFloat((window.getComputedStyle(targetDiv, null).getPropertyValue('padding')));
-
-			// clearDiv.style.width = (targetDiv.offsetWidth - padding) + "px";
-			// clearDiv.style.height = (targetDiv.offsetHeight - padding) + "px";
-
-			// clearDiv.style.background = "white";
-			// clearDiv.style.position = "absolute";
-			// clearDiv.style.zIndex = 2;
-			// clearDiv.webkitFilter = "blur(2px)";
-
-			// clearDiv.addEventListener("click", removeBlur, false);
-			// clearDiv.soothe = {parent : elem};
-
-			// // create span for bluring
-			// var newSpan = document.createElement('span');
-
-			// // Append "Lorem Ipsum" text to new span:
-			// newSpan.appendChild( document.createTextNode(targetDiv.innerText) );
-			// newSpan.soothe = {parent : elem};
-
-
-			// // Replace old text node with new span:
-
-			// targetDiv.insertBefore(clearDiv, targetDiv.firstChild);
-
 			elem.soothe.div = targetDiv;
 			SOOTHE_ELEMS.push(targetDiv);
 		}
