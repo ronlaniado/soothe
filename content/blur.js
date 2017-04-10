@@ -21,7 +21,7 @@ function addBlur(elem) {
 
 		if (analysis.score < 0) {
 
-			targetDiv.style.webkitFilter =  "blur(3px)";
+			targetDiv.style.webkitFilter =  "blur(10px)";
 			targetDiv.addEventListener("click", removeBlur, false);
 
 			elem.soothe.div = targetDiv;
